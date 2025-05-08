@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import MovieDisplay from "./components/MovieDisplay.jsx";
 import Form from "./components/Form.jsx";
+// import axios from 'axios';
 
 function App() {
   const apiKey = "98e3fb1f";
@@ -22,7 +23,10 @@ function App() {
 
   // This will run on the first render but not on subsquent renders
   useEffect(() => {
-    getMovie("Clueless");
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+    getMovie(randomLetter);
   }, []);
 
   return (
